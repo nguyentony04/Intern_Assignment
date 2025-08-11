@@ -1,0 +1,109 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: #0f1113;
+  color: #e9ecf1;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  line-height: 1.5;
+}
+img { display: block; max-width: 100%; height: auto; }
+
+/* container */
+#root { max-width: 1280px; margin: 0 auto; padding: 24px; }
+
+/* product grid */
+.productList {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 28px;
+}
+@media (max-width: 1200px) { .productList { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 860px)  { .productList { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; } }
+@media (max-width: 520px)  { .productList { grid-template-columns: 1fr; gap: 18px; } }
+
+/*product card*/
+.productCard {
+  background: #14171a;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  overflow: hidden;               
+  display: flex;
+  flex-direction: column;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.28);
+}
+.productCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.12);
+  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+}
+
+/*stops overlapping images */
+.productMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;             
+  background: #0b0d0f;
+  overflow: hidden;
+}
+.productMedia .productImage {
+  position: absolute;
+  inset: 0;                          
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                 
+  transition: transform .25s ease;
+}
+.productCard:hover .productImage { transform: scale(1.03); }  /* hover on/off cursor */
+
+/*body*/
+.productBody {
+  display: grid;
+  gap: 8px;
+  padding: 14px 14px 16px;
+}
+.productName {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: #f3f6fb;
+}
+.productDesc {
+  margin: 0;
+  color: #cbd3dd;
+  font-size: .95rem;
+}
+.priceLine {
+  margin: 2px 0 0;
+  font-weight: 700;
+  color: #e7edf7;
+  letter-spacing: .2px;
+}
+
+/*instock or out stock badge */
+.stockBadge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border: 1px solid transparent;
+}
+.stockBadge.inStock {
+  background: rgba(24,160,108,.16);
+  color: #7ae0b5;
+  border-color: rgba(24,160,108,.32);
+}
+.stockBadge.outOfStock {
+  background: rgba(209, 69, 51, 0.173);
+  color: #ffffff;
+  border-color: rgba(255, 0, 0, 0.32);
+}
+
+
+a { color: #c6dcff; text-decoration: none; }
+a:hover { text-decoration: underline; }
