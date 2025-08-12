@@ -2,67 +2,87 @@
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: #0f1113;
-  color: #e9ecf1;
+  background: #ffffff;
+  color: #111111;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   line-height: 1.5;
 }
 img { display: block; max-width: 100%; height: auto; }
 
 /* container */
-#root { max-width: 1280px; margin: 0 auto; padding: 24px; }
+#root { max-width: 1280px; margin: 0 auto; padding: 40px 24px; }
 
 /* product grid */
 .productList {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 32px;
 }
 @media (max-width: 1200px) { .productList { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 @media (max-width: 860px)  { .productList { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px; } }
 @media (max-width: 520px)  { .productList { grid-template-columns: 1fr; gap: 18px; } }
 
-/*product card*/
+/* product card */
 .productCard {
-  background: #14171a;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 14px;
-  overflow: hidden;               
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  transform: translateZ(0);
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,.28);
-}
-.productCard img{
-  background-color: rgb(255, 255, 255);
-  padding: 10px;
-  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 .productCard:hover {
-  transform: translateY(-3px);
-  border-color: rgba(255,255,255,.12);
-  box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  transform: translateY(-2px);
+  border-color: #dcdcdc;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
 }
 
-/*stops overlapping images */
+/* image area with fixed ratio */
 .productMedia {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 5;             
-  background: #0b0d0f;
+  aspect-ratio: 4 / 5;
+  background: #ffffff;
   overflow: hidden;
 }
-.productMedia .productImage {
+.productImage {
   position: absolute;
-  inset: 0;                          
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;                 
+  object-fit: cover;
   transition: transform .25s ease;
 }
-.productCard:hover .productImage { transform: scale(1.03); }  /* hover on/off cursor */
+.productCard:hover .productImage { transform: scale(1.015); }
 
-/*body*/
+/* stock badge positioned over image */
+.stockBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .2px;
+  border: 1px solid transparent;
+  z-index: 2;
+}
+.stockBadge.inStock {
+  background: #f2f2f2;
+  color: #111111;
+  border-color: #e6e6e6;
+}
+.stockBadge.outOfStock {
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+}
+
+/* text content */
 .productBody {
   display: grid;
   gap: 8px;
@@ -72,43 +92,31 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0;
   font-size: 1.02rem;
   font-weight: 600;
-  letter-spacing: .2px;
-  color: #f3f6fb;
+  letter-spacing: 0;
+  color: #111111;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
+  transition: color .18s ease, text-decoration-color .18s ease, text-underline-offset .18s ease;
+}
+.productCard:hover .productName {
+  color: #111111;
+  text-decoration: underline;
+  text-decoration-color: #11111122;
+  text-underline-offset: 4px;
 }
 .productDesc {
   margin: 0;
-  color: #cbd3dd;
+  color: #555555;
   font-size: .95rem;
 }
 .priceLine {
   margin: 2px 0 0;
-  font-weight: 700;
-  color: #e7edf7;
-  letter-spacing: .2px;
-}
-
-/*instock or out stock badge */
-.stockBadge {
-  display: inline-block;
-  margin-top: 6px;
-  padding: 4px 10px;
-  border-radius: 9999px;
-  font-size: .82rem;
   font-weight: 600;
+  color: #111111;
   letter-spacing: .2px;
-  border: 1px solid transparent;
-}
-.stockBadge.inStock {
-  background: rgba(24,160,108,.16);
-  color: #7ae0b5;
-  border-color: rgba(24,160,108,.32);
-}
-.stockBadge.outOfStock {
-  background: rgba(209, 69, 51, 0.173);
-  color: #ffffff;
-  border-color: rgba(255, 0, 0, 0.32);
 }
 
-
-a { color: #c6dcff; text-decoration: none; }
-a:hover { text-decoration: underline; }
+/* links */
+a { color: #111111; text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-color: #11111122; }
