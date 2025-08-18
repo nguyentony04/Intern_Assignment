@@ -5,6 +5,7 @@ import { useState } from 'react'
 function App() {
   const [sortOption, setSortOption] = useState('')
   const [filterOption, setFilterOption] = useState('')
+  const [theme, setTheme] = useState('light') // theme toggle state
 
   const products = [
     { key: 0, image: 'https://images.selfedge.com/cache/catalog/20220628/Strike_Gold_Blank_Loopwheeled_T-Shirt_White-1-680x1025.jpg', name: 'Shirt', price: 25.0, description: 'S/M/L/XL', inStock: false },
@@ -32,8 +33,14 @@ function App() {
     filteredProducts.sort((a, b) => b.price - a.price)
   }
 
+  // this is theme toggle (kind of works but styling not hooked fully yet)
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light')
+    // TODO: still need to wire this up to styles.css
+  }
+
   return (
-    <div>
+    <div className={`app ${theme}`}>
       {/* header */}
       <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
         <h1 style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>The Basics</h1>
@@ -59,6 +66,11 @@ function App() {
               <option value="highLow">Price: High to Low</option>
             </select>
           </div>
+
+          {/* theme toggle button (half working) */}
+          <button onClick={toggleTheme}>
+            Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
+          </button>
         </div>
       </header>
 

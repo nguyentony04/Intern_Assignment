@@ -1,8 +1,41 @@
+/* light default */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #555555;
+
+  --card-bg: #ffffff;
+  --border: #e6e6e6;
+  --border-hover: #dcdcdc;
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-hover: 0 6px 18px rgba(0,0,0,0.08);
+
+  --name-underline: #11111122;
+}
+
+/* dark theme variables  */
+.app.dark {
+  --bg: #0f1113;
+  --text: #e9ecf1;
+  --muted: #cbd3dd;
+
+  --card-bg: #14171a;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.16);
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.28);
+  --shadow-hover: 0 12px 28px rgba(0,0,0,0.35);
+
+  --name-underline: rgba(243,246,251,0.20);
+}
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
   margin: 0;
-  background: #ffffff;
+/* body stays light*/
+  background: #ffffff;              
   color: #111111;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   line-height: 1.5;
@@ -10,7 +43,13 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 
 /* container */
-#root { max-width: 1280px; margin: 0 auto; padding: 40px 24px; }
+#root { 
+  max-width: 1280px; 
+  margin: 0 auto; 
+  padding: 40px 24px; 
+  background: var(--bg);            
+  color: var(--text);               
+}
 
 /* product grid */
 .productList {
@@ -24,20 +63,20 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* product card */
 .productCard {
-  background: #ffffff;
-  border: 1px solid #e6e6e6;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transform: translateZ(0);
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  box-shadow: var(--shadow);
 }
 .productCard:hover {
   transform: translateY(-2px);
-  border-color: #dcdcdc;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 /* image area with fixed ratio */
@@ -45,7 +84,7 @@ img { display: block; max-width: 100%; height: auto; }
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 5;
-  background: #ffffff;
+  background: var(--card-bg);
   overflow: hidden;
 }
 .productImage {
@@ -93,33 +132,33 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: 0;
-  color: #111111;
+  color: var(--text);
   text-decoration: none;
   text-underline-offset: 3px;
   text-decoration-color: transparent;
   transition: color .18s ease, text-decoration-color .18s ease, text-underline-offset .18s ease;
 }
 .productCard:hover .productName {
-  color: #111111;
+  color: var(--text);
   text-decoration: underline;
-  text-decoration-color: #11111122;
+  text-decoration-color: var(--name-underline);
   text-underline-offset: 4px;
 }
 .productDesc {
   margin: 0;
-  color: #555555;
+  color: var(--muted);
   font-size: .95rem;
 }
 .priceLine {
   margin: 2px 0 0;
   font-weight: 600;
-  color: #111111;
+  color: var(--text);
   letter-spacing: .2px;
 }
 
 /* links */
-a { color: #111111; text-decoration: none; }
-a:hover { text-decoration: underline; text-decoration-color: #11111122; }
+a { color: var(--text); text-decoration: none; }
+a:hover { text-decoration: underline; text-decoration-color: var(--name-underline); }
 
 /* this is the where the logo would go*/
 .siteHeader {
@@ -153,26 +192,27 @@ a:hover { text-decoration: underline; text-decoration-color: #11111122; }
 
 .label {
   font-size: 12px;
-  color: #666;
+  color: #666; 
 }
 
+/*this area needs work*/
 .select,
 .input {
   appearance: none;
   -webkit-appearance: none;
   font: inherit;
   padding: 8px 10px;
-  border: 1px solid #e2e2e2;
+  border: 1px solid #e2e2e2; 
   border-radius: 8px;
-  background: #fff;
-  color: #111;
+  background: #fff;          
+  color: #111;               
 }
 
 .select:focus,
 .input:focus {
   outline: none;
   border-color: #cfcfcf;
-  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06);
+  box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.06); /* TODO: dark variant if desired */
 }
 
 .priceInputs {
