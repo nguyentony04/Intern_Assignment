@@ -1,6 +1,6 @@
 import './styles/styles.css'
 import ProductCard from './components/ProductCard'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [sortOption, setSortOption] = useState('')
@@ -33,11 +33,15 @@ function App() {
     filteredProducts.sort((a, b) => b.price - a.price)
   }
 
-  // this is theme toggle (kind of works but styling not hooked fully yet)
+  // this is theme toggle
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
-    // TODO: still need to wire this up to styles.css
   }
+
+  // keep body class synced with theme
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
 
   return (
     <div className={`app ${theme}`}>
@@ -67,7 +71,7 @@ function App() {
             </select>
           </div>
 
-          {/* theme toggle button (half working) */}
+          {/* theme toggle button */}
           <button onClick={toggleTheme}>
             Toggle {theme === 'light' ? 'Dark' : 'Light'} Mode
           </button>
