@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.selfedge.com/cache/catalog/20220628/Strike_Gold_Blank_Loopwheeled_T-Shirt_White-1-680x1025.jpg",
+    "name": "Shirt",
+    "price": 25.0,
+    "description": "S M L XL",
+    "inStock": false
+  },
+  {
+    "id": 2,
+    "image": "https://media-catalog.giglio.com/images/f_auto/t_prodZoom/v1/products/F79778.002_1/diesel.jpg",
+    "name": "Belt",
+    "price": 15.0,
+    "description": "28 to 30 | 30 to 32 | 32 to 34",
+    "inStock": true
+  },
+  {
+    "id": 3,
+    "image": "https://sacred-archive.com/cdn/shop/files/SILO-SHORT-FLATLAY-2_e1529aa1-ce66-4907-83a9-4c32cb57afc8.png?v=1733988787&width=2000",
+    "name": "Shorts",
+    "price": 35.0,
+    "description": "28 to 30 | 30 to 32 | 32 to 34",
+    "inStock": true
+  },
+  {
+    "id": 4,
+    "image": "https://www.pearledivory.com/cdn/shop/files/NOM7.jpg?v=1737745481&width=493",
+    "name": "Baggy Jeans",
+    "price": 55.0,
+    "description": "28x30 | 30x32 | 32x34",
+    "inStock": false
+  },
+  {
+    "id": 5,
+    "image": "https://cdn.media.amplience.net/i/drmartens/21084001.80?$smart640$&fmt=auto",
+    "name": "Loafers",
+    "price": 70.0,
+    "description": "Sizes 7 to 12",
+    "inStock": true
+  },
+  {
+    "id": 6,
+    "image": "https://scuffers.com/cdn/shop/files/RAW_BLUE_HOODIE_2.jpg?v=1756902308",
+    "name": "Hoodie",
+    "price": 48.0,
+    "description": "S | M | L | XL",
+    "inStock": true
+  },
+  {
+    "id": 7,
+    "image": "https://assets2.oakley.com/cdn-record-files-pi/9a946144-e60c-448e-887b-b185006f3675/5975a62d-c0ec-46ea-89ca-b24400bfdcf4/FOS901976__02E.png?impolicy=OO_zoom",
+    "name": "Backpack",
+    "price": 42.0,
+    "description": "18 liter",
+    "inStock": true
+  },
+  {
+    "id": 8,
+    "image": "https://image.hm.com/assets/hm/fd/b9/fdb9c77b7ec0935f8facdb54617c78f99dddd516.jpg?imwidth=1260",
+    "name": "Cap",
+    "price": 18.0,
+    "description": "One size",
+    "inStock": true
+  },
+  {
+    "id": 9,
+    "image": "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/478230/sub/goods_478230_sub14_3x4.jpg",
+    "name": "Bomber Jacket",
+    "price": 85.0,
+    "description": "S | M | L | XL",
+    "inStock": true
+  },
+  {
+    "id": 10,
+    "image": "https://images.journeys.com/images/products/1_26191_ZM.JPG",
+    "name": "Socks",
+    "price": 8.0,
+    "description": "Crew cotton",
+    "inStock": true
+  }
+]

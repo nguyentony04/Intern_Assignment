@@ -245,3 +245,62 @@ body.dark .priceInputs .dash,
   .siteHeader { grid-template-columns: 1fr; gap: 12px; }
   .controlsRow { justify-content: flex-start; }
 }
+
+/* actions row on the card */
+.actionsRow {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+}
+
+/* add to cart button */
+.addBtn {
+  appearance: none;
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #111111;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease;
+  box-shadow: var(--shadow);
+}
+.addBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-hover);
+}
+.addBtn:active {
+  transform: translateY(0);
+}
+.addBtn:disabled {
+  background: #9aa0a6;
+  border-color: #9aa0a6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* small cart pill in header */
+.cartPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9999px;
+  font-weight: 600;
+}
+.cartCount {
+  min-width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  padding: 0 6px;
+  border-radius: 9999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 12px;
+  border: 1px solid #111111;
+}
